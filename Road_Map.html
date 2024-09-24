@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHP Roadmap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#basic">Basic PHP</a>
+        <a href="#intermediate">Intermediate PHP</a>
+        <a href="#advanced">Advanced PHP</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+    <section id="home"></section>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Basic PHP Concepts -->
+        <div id="basic" class="section">
+            <h3>Basic PHP Concepts (Beginner Level)</h3>
+            <h4>1. Introduction to PHP</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('php-info')">What is PHP?</p>
+                <div id="php-info" class="hidden-content">
+                    <p>PHP (Hypertext Preprocessor) is a popular open-source scripting language that is
+                        especially suited for web development. It can be embedded into HTML,
+                        and it allows developers to create dynamic content that interacts with databases.
+                        PHP is widely used for building web applications, and its simplicity and flexibility
+                        make it an excellent choice for both beginners and experienced developers.</p>
+                    <p>PHP scripts are executed on the server, and the result is sent to the client as plain HTML.
+                        This makes PHP a server-side language, meaning it is executed on the server before the page
+                        is sent to the user's web browser.</p>
+                    <p>With PHP, you can perform various tasks such as:</p>
+                    <ul>
+                        <li>Handling forms and user input</li>
+                        <li>Sending and receiving cookies</li>
+                        <li>Connecting to and managing databases</li>
+                        <li>Creating session management systems</li>
+                        <li>Generating dynamic page content</li>
+                    </ul>
+                    <p>Overall, PHP is a versatile language that powers a significant portion of the web.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('installing-php')">Installing PHP (Local Development
+                    Environment with XAMPP/WAMP or using Docker)</p>
+                <div id="installing-php" class="hidden-content">
+                    <p>To start using PHP, you can install it in a local development environment using tools like XAMPP
+                        or WAMP,
+                        or you can set it up in a container using Docker.
+                        These tools provide an easy way to set up a web server and database on your local machine.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('running-script')">Running a Simple PHP Script</p>
+                <div id="running-script" class="hidden-content">
+                    <p>You can run PHP scripts by saving them with a <code>.php</code> extension and accessing them
+                        through a web server. For example:</p>
+                    <pre>
+            &lt;?php
+            echo "Hello, World!";
+            ?&gt;
+          </pre>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('embedding-php')">Embedding PHP in HTML</p>
+                <div id="embedding-php" class="hidden-content">
+                    <p>PHP code can be embedded directly within HTML by using the <code>&lt;?php ... ?&gt;</code> tags.
+                        For example:</p>
+                    <pre>
+            &lt;html&gt;
+            &lt;body&gt;
+              &lt;?php
+              echo "This is embedded PHP!";
+              ?&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </pre>
+                </div>
+            </ul>
+
+            <h4>2. PHP Syntax and Fundamentals</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('php-tags')">PHP Tags: &lt;?php ... ?&gt;</p>
+                <div id="php-tags" class="hidden-content">
+                    <p>PHP code is enclosed in special tags. The standard tag for PHP code is
+                        <code>&lt;?php ... ?&gt;</code>. You can also use <code>&lt;? ... ?&gt;</code> for short tags,
+                        but it's not recommended.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('echo-vs-print')">Echo vs Print</p>
+                <div id="echo-vs-print" class="hidden-content">
+                    <p><strong>echo</strong> is a language construct and can take multiple parameters, while
+                        <strong>print</strong> is a function and always returns 1. Example:</p>
+                    <pre>
+            &lt;?php
+            echo "Hello, World!";
+            print "Hello, World!";
+            ?&gt;
+          </pre>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('comments')">Comments in PHP (single-line, multi-line)</p>
+                <div id="comments" class="hidden-content">
+                    <p>Single-line comments use <code>//</code> or <code>#</code>, and multi-line comments use
+                        <code>/* ... */</code>.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('variables-datatypes')">Variables and Data Types (String,
+                    Integer, Float, Boolean, Null)</p>
+                <div id="variables-datatypes" class="hidden-content">
+                    <p>PHP supports several data types:</p>
+                    <ul>
+                        <li><strong>String</strong>: e.g., <code>$str = "Hello";</code></li>
+                        <li><strong>Integer</strong>: e.g., <code>$int = 42;</code></li>
+                        <li><strong>Float</strong>: e.g., <code>$float = 3.14;</code></li>
+                        <li><strong>Boolean</strong>: e.g., <code>$bool = true;</code></li>
+                        <li><strong>Null</strong>: e.g., <code>$var = null;</code></li>
+                    </ul>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('constants')">Constants: define()</p>
+                <div id="constants" class="hidden-content">
+                    <p>You can define constants using the <code>define()</code> function:</p>
+                    <pre>
+            &lt;?php
+            define("PI", 3.14);
+            echo PI; // Outputs: 3.14
+            ?&gt;
+          </pre>
+                </div>
+            </ul>
+
+            <h4>3. PHP Operators</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('arithmetic')">Arithmetic Operators: +, -, *, /</p>
+                <div id="arithmetic" class="hidden-content">
+                    <p>PHP supports the following arithmetic operators:</p>
+                    <ul>
+                        <li><strong>Addition (+):</strong> Adds two values. E.g., <code>$sum = 3 + 5;</code></li>
+                        <li><strong>Subtraction (-):</strong> Subtracts one value from another. E.g.,
+                            <code>$difference = 8 - 3;</code></li>
+                        <li><strong>Multiplication (*):</strong> Multiplies two values. E.g.,
+                            <code>$product = 4 * 2;</code></li>
+                        <li><strong>Division (/):</strong> Divides one value by another. E.g.,
+                            <code>$quotient = 10 / 2;</code></li>
+                    </ul>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('assignment')">Assignment Operators: =, +=, -=</p>
+                <div id="assignment" class="hidden-content">
+                    <p>Assignment operators assign values to variables:</p>
+                    <ul>
+                        <li><strong>= :</strong> Assigns a value to a variable. E.g., <code>$x = 5;</code></li>
+                        <li><strong>+= :</strong> Adds a value to a variable. E.g.,
+                            <code>$x += 2; // Same as $x = $x + 2;</code></li>
+                        <li><strong>-= :</strong> Subtracts a value from a variable. E.g.,
+                            <code>$x -= 3; // Same as $x = $x - 3;</code></li>
+                    </ul>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('comparison')">Comparison Operators: ==, ===, !=, &lt;&gt;</p>
+                <div id="comparison" class="hidden-content">
+                    <p>Comparison operators compare two values:</p>
+                    <ul>
+                        <li><strong>== :</strong> Equal to. E.g., <code>$x == $y;</code> (Returns true if values are
+                            equal)</li>
+                        <li><strong>=== :</strong> Identical to. E.g., <code>$x === $y;</code> (Returns true if values
+                            and types are equal)</li>
+                        <li><strong>!= :</strong> Not equal to. E.g., <code>$x != $y;</code> (Returns true if values are
+                            not equal)</li>
+                        <li><strong>&lt;&gt; :</strong> Not equal to. Equivalent to <code>!=</code>.</li>
+                    </ul>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('logical')">Logical Operators: &&, ||, !</p>
+                <div id="logical" class="hidden-content">
+                    <p>Logical operators combine conditional statements:</p>
+                    <ul>
+                        <li><strong>&& :</strong> Logical AND. E.g., <code>$x && $y;</code> (Returns true if both
+                            conditions are true)</li>
+                        <li><strong>|| :</strong> Logical OR. E.g., <code>$x || $y;</code> (Returns true if either
+                            condition is true)</li>
+                        <li><strong>! :</strong> Logical NOT. E.g., <code>!$x;</code> (Returns true if the condition is
+                            false)</li>
+                    </ul>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('increment-decrement')">Increment/Decrement Operators: ++, --
+                </p>
+                <div id="increment-decrement" class="hidden-content">
+                    <p>Increment and Decrement operators modify the value of a variable by 1:</p>
+                    <ul>
+                        <li><strong>++ :</strong> Increment. E.g., <code>$x++;</code> (Adds 1 to the variable)</li>
+                        <li><strong>-- :</strong> Decrement. E.g., <code>$x--;</code> (Subtracts 1 from the variable)
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+
+            <h4>4. PHP Control Structures</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('control-if')">If, else, elseif</p>
+                <div id="control-if" class="hidden-content">
+                    <p>Conditional statements allow you to execute different code based on different conditions.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('switch')">Switch Statements</p>
+                <div id="switch" class="hidden-content">
+                    <p>Switch statements are an alternative to using multiple if statements.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('loops')">Loops (while, do-while, for, foreach)</p>
+                <div id="loops" class="hidden-content">
+                    <p>Loops allow you to execute the same block of code multiple times.</p>
+                </div>
+            </ul>
+
+            <h4>5. PHP Functions</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('defining-functions')">Defining and calling functions</p>
+                <div id="defining-functions" class="hidden-content">
+                    <p>Functions are reusable pieces of code that can be called with specific parameters.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('function-parameters')">Function parameters and return values
+                </p>
+                <div id="function-parameters" class="hidden-content">
+                    <p>Functions can accept parameters and return values.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('variable-scope')">Variable scope: Global vs Local</p>
+                <div id="variable-scope" class="hidden-content">
+                    <p>Variable scope determines the accessibility of variables.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('built-in-functions')">Built-in PHP functions</p>
+                <div id="built-in-functions" class="hidden-content">
+                    <p>PHP has many built-in functions for various tasks.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('user-defined-functions')">User-defined functions</p>
+                <div id="user-defined-functions" class="hidden-content">
+                    <p>You can create your own functions for specific tasks.</p>
+                </div>
+            </ul>
+
+            <h4>6. PHP Arrays</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('indexed-arrays')">Indexed Arrays</p>
+                <div id="indexed-arrays" class="hidden-content">
+                    <p>Indexed arrays use numeric indexes to access their elements.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('associative-arrays')">Associative Arrays</p>
+                <div id="associative-arrays" class="hidden-content">
+                    <p>Associative arrays use named keys to access their elements.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('multidimensional-arrays')">Multidimensional Arrays</p>
+                <div id="multidimensional-arrays" class="hidden-content">
+                    <p>Multidimensional arrays are arrays of arrays.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('array-functions')">Array functions:
+                    <code>array_merge()</code>, <code>array_push()</code>, <code>array_pop()</code>, etc.</p>
+                <div id="array-functions" class="hidden-content">
+                    <p>PHP provides various functions for manipulating arrays.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('iterating-arrays')">Iterating over arrays with
+                    <code>foreach()</code></p>
+                <div id="iterating-arrays" class="hidden-content">
+                    <p>The <code>foreach()</code> loop is used to iterate over arrays easily.</p>
+                </div>
+            </ul>
+
+            <h4>7. PHP Strings</h4>
+            <ul>
+                <p class="toggle" onclick="toggleContent('string-functions')">String functions: <code>strlen()</code>,
+                    <code>str_replace()</code>, <code>strpos()</code>, <code>substr()</code></p>
+                <div id="string-functions" class="hidden-content">
+                    <p>PHP provides numerous functions for string manipulation.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('string-concatenation')">String concatenation using
+                    <code>.</code> operator</p>
+                <div id="string-concatenation" class="hidden-content">
+                    <p>You can concatenate strings using the <code>.</code> operator.</p>
+                </div>
+
+                <p class="toggle" onclick="toggleContent('string-interpolation')">String interpolation using double
+                    quotes</p>
+                <div id="string-interpolation" class="hidden-content">
+                    <p>Strings enclosed in double quotes allow for variable interpolation.</p>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Intermediate PHP Concepts -->
+    <div id="intermediate" class="section">
+        <h3>Intermediate PHP Concepts</h3>
+
+        <h4>8. Form Handling and Validation</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('form-methods')">$_GET vs $_POST methods</p>
+            <div id="form-methods" class="hidden-content">
+                <p>Comparison of the two methods for sending form data: <code>$_GET</code> appends data to the URL,
+                    while <code>$_POST</code> sends data in the request body.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('form-data')">Handling form data using PHP</p>
+            <div id="form-data" class="hidden-content">
+                <p>Using <code>$_GET</code> and <code>$_POST</code> to access form data and process it in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('form-validation')">Basic form validation: Required fields,
+                sanitizing input</p>
+            <div id="form-validation" class="hidden-content">
+                <p>Ensuring that required fields are filled out and sanitizing input to prevent XSS and SQL injection.
+                </p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('superglobals')">Superglobals: <code>$_GET</code>,
+                <code>$_POST</code>, <code>$_REQUEST</code>, <code>$_SERVER</code></p>
+            <div id="superglobals" class="hidden-content">
+                <p>Understanding the role of superglobal arrays in PHP for accessing global variables.</p>
+            </div>
+        </ul>
+
+        <h4>9. PHP Sessions and Cookies</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('cookies')">Setting and retrieving cookies:
+                <code>setcookie()</code></p>
+            <div id="cookies" class="hidden-content">
+                <p>How to set and access cookies using PHP's <code>setcookie()</code> function.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('sessions')">Starting a session: <code>session_start()</code></p>
+            <div id="sessions" class="hidden-content">
+                <p>Using <code>session_start()</code> to initiate a session for tracking user data.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('session-data')">Storing and accessing session data</p>
+            <div id="session-data" class="hidden-content">
+                <p>Methods for storing and retrieving data in PHP sessions.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('destroy-sessions')">Destroying sessions and session timeout</p>
+            <div id="destroy-sessions" class="hidden-content">
+                <p>How to properly destroy sessions and manage session timeout settings.</p>
+            </div>
+        </ul>
+
+        <h4>10. File Handling</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('reading-files')">Reading files: <code>fopen()</code>,
+                <code>fread()</code>, <code>file_get_contents()</code></p>
+            <div id="reading-files" class="hidden-content">
+                <p>Methods for reading files in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('writing-files')">Writing to files: <code>fwrite()</code>,
+                <code>file_put_contents()</code></p>
+            <div id="writing-files" class="hidden-content">
+                <p>Techniques for writing data to files in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('file-upload')">File upload basics</p>
+            <div id="file-upload" class="hidden-content">
+                <p>Overview of how file uploads work in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('file-permissions')">File permissions</p>
+            <div id="file-permissions" class="hidden-content">
+                <p>Understanding file permissions and their implications in PHP.</p>
+            </div>
+        </ul>
+
+        <h4>11. Error Handling and Exceptions</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('error-types')">Types of errors (notices, warnings, fatal errors)
+            </p>
+            <div id="error-types" class="hidden-content">
+                <p>Different types of errors in PHP and their significance.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('try-catch')">Error handling using try-catch</p>
+            <div id="try-catch" class="hidden-content">
+                <p>Implementing error handling with try-catch blocks.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('custom-error-handlers')">Custom error handlers:
+                <code>set_error_handler()</code></p>
+            <div id="custom-error-handlers" class="hidden-content">
+                <p>Creating custom error handling functions in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('error-logging')">Logging errors to files</p>
+            <div id="error-logging" class="hidden-content">
+                <p>Methods for logging errors for debugging purposes.</p>
+            </div>
+        </ul>
+
+        <h4>12. PHP Date and Time</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('date-functions')">Date and time functions: <code>date()</code>,
+                <code>time()</code>, <code>strtotime()</code></p>
+            <div id="date-functions" class="hidden-content">
+                <p>Using built-in functions to manipulate date and time in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('formatting-dates')">Formatting dates and times</p>
+            <div id="formatting-dates" class="hidden-content">
+                <p>Techniques for formatting dates and times for output.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('timezones')">Timezones and time differences</p>
+            <div id="timezones" class="hidden-content">
+                <p>Managing timezones and calculating time differences in PHP.</p>
+            </div>
+        </ul>
+
+        <h4>13. PHP OOP (Object-Oriented Programming)</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('classes-objects')">Classes and Objects</p>
+            <div id="classes-objects" class="hidden-content">
+                <p>Understanding the fundamental concepts of OOP in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('properties-methods')">Properties and Methods</p>
+            <div id="properties-methods" class="hidden-content">
+                <p>How to define properties and methods in classes.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('constructors-destructors')">Constructors and Destructors</p>
+            <div id="constructors-destructors" class="hidden-content">
+                <p>Using constructors and destructors for initializing and cleaning up objects.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('inheritance')">Inheritance</p>
+            <div id="inheritance" class="hidden-content">
+                <p>Implementing inheritance in PHP OOP to create hierarchies of classes.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('access-modifiers')">Access Modifiers (public, private, protected)
+            </p>
+            <div id="access-modifiers" class="hidden-content">
+                <p>Understanding access control for properties and methods in classes.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('static-methods-properties')">Static Methods and Properties</p>
+            <div id="static-methods-properties" class="hidden-content">
+                <p>Using static methods and properties in PHP classes.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('interfaces-abstract-classes')">Interfaces and Abstract Classes</p>
+            <div id="interfaces-abstract-classes" class="hidden-content">
+                <p>Creating interfaces and abstract classes for defining contracts and base classes.</p>
+            </div>
+        </ul>
+    </div>
+
+
+    <!-- Advanced PHP Concepts -->
+    <div id="advanced" class="section">
+        <h3>Advanced PHP Concepts</h3>
+
+        <h4>14. PHP and MySQL Database</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('mysqli-pdo')">Connecting to MySQL using MySQLi and PDO</p>
+            <div id="mysqli-pdo" class="hidden-content">
+                <p>Methods for connecting to MySQL databases in PHP using MySQLi and PDO.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('crud-operations')">CRUD operations (Create, Read, Update, Delete)
+            </p>
+            <div id="crud-operations" class="hidden-content">
+                <p>Performing basic database operations: Create, Read, Update, Delete.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('prepared-statements')">Prepared Statements (preventing SQL
+                Injection)</p>
+            <div id="prepared-statements" class="hidden-content">
+                <p>Using prepared statements to safeguard against SQL injection attacks.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('transactions')">Transactions</p>
+            <div id="transactions" class="hidden-content">
+                <p>Understanding how to use transactions in database operations.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('mysqli-vs-pdo')">Using MySQLi vs PDO</p>
+            <div id="mysqli-vs-pdo" class="hidden-content">
+                <p>Comparing MySQLi and PDO for database interactions in PHP.</p>
+            </div>
+        </ul>
+
+        <h4>15. Working with APIs</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('restful-apis')">Introduction to RESTful APIs</p>
+            <div id="restful-apis" class="hidden-content">
+                <p>Overview of RESTful APIs and their principles.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('curl-requests')">Making HTTP requests with cURL</p>
+            <div id="curl-requests" class="hidden-content">
+                <p>Using cURL to make HTTP requests in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('json-xml')">Working with JSON and XML in PHP</p>
+            <div id="json-xml" class="hidden-content">
+                <p>Handling JSON and XML data formats in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('third-party-apis')">Consuming third-party APIs (e.g., Google Maps
+                API)</p>
+            <div id="third-party-apis" class="hidden-content">
+                <p>Integrating and using third-party APIs in PHP applications.</p>
+            </div>
+        </ul>
+
+        <h4>16. PHP Regular Expressions</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('regular-expressions')">Understanding and using regular expressions
+            </p>
+            <div id="regular-expressions" class="hidden-content">
+                <p>Basics of regular expressions and their usage in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('pattern-matching')">Pattern matching with
+                <code>preg_match()</code>, <code>preg_replace()</code></p>
+            <div id="pattern-matching" class="hidden-content">
+                <p>Using <code>preg_match()</code> and <code>preg_replace()</code> for pattern matching.</p>
+            </div>
+        </ul>
+
+        <h4>17. PHP Namespaces</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('namespaces')">Defining and using namespaces</p>
+            <div id="namespaces" class="hidden-content">
+                <p>Understanding namespaces and their benefits in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('autoloading')">Autoloading classes with namespaces</p>
+            <div id="autoloading" class="hidden-content">
+                <p>Using autoloading to manage class files with namespaces.</p>
+            </div>
+        </ul>
+
+        <h4>18. Composer and Package Management</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('composer-introduction')">Introduction to Composer</p>
+            <div id="composer-introduction" class="hidden-content">
+                <p>Overview of Composer and its role in PHP development.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('managing-dependencies')">Installing and managing dependencies</p>
+            <div id="managing-dependencies" class="hidden-content">
+                <p>How to use Composer to manage project dependencies.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('php-libraries')">Using popular PHP libraries and frameworks via
+                Composer</p>
+            <div id="php-libraries" class="hidden-content">
+                <p>Integrating libraries and frameworks with Composer.</p>
+            </div>
+        </ul>
+
+        <h4>19. Security in PHP</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('sql-injection')">Preventing SQL Injection</p>
+            <div id="sql-injection" class="hidden-content">
+                <p>Techniques to prevent SQL injection vulnerabilities.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('xss-prevention')">Cross-Site Scripting (XSS) Prevention</p>
+            <div id="xss-prevention" class="hidden-content">
+                <p>Strategies to prevent XSS attacks in PHP applications.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('csrf-prevention')">Cross-Site Request Forgery (CSRF) Prevention
+            </p>
+            <div id="csrf-prevention" class="hidden-content">
+                <p>Implementing measures to prevent CSRF attacks.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('input-validation')">Input Validation and Sanitization</p>
+            <div id="input-validation" class="hidden-content">
+                <p>Ensuring proper validation and sanitization of user inputs.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('password-hashing')">Secure password hashing (using
+                <code>password_hash()</code> and <code>password_verify()</code>)</p>
+            <div id="password-hashing" class="hidden-content">
+                <p>Methods for securely hashing and verifying passwords.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('https-ssl')">HTTPS and SSL in PHP</p>
+            <div id="https-ssl" class="hidden-content">
+                <p>Using HTTPS and SSL to secure PHP applications.</p>
+            </div>
+        </ul>
+
+        <h4>20. MVC Architecture</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('mvc-introduction')">Introduction to Model-View-Controller (MVC)
+                design pattern</p>
+            <div id="mvc-introduction" class="hidden-content">
+                <p>An overview of the MVC architecture and its components.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('mvc-roles')">Understanding the role of Models, Views, and
+                Controllers</p>
+            <div id="mvc-roles" class="hidden-content">
+                <p>Explaining the functions of each component in MVC.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('mvc-frameworks')">Using MVC frameworks (e.g., Laravel, Symfony)
+            </p>
+            <div id="mvc-frameworks" class="hidden-content">
+                <p>Working with popular MVC frameworks for PHP development.</p>
+            </div>
+        </ul>
+
+        <h4>21. PHP Frameworks (Laravel/Symfony)</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('installing-frameworks')">Installing Laravel or Symfony</p>
+            <div id="installing-frameworks" class="hidden-content">
+                <p>Steps to install and set up Laravel or Symfony.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('routing-controllers')">Understanding routing, controllers, and
+                views</p>
+            <div id="routing-controllers" class="hidden-content">
+                <p>Basic concepts of routing and controllers in frameworks.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('eloquent-orm')">Working with Eloquent ORM (in Laravel)</p>
+            <div id="eloquent-orm" class="hidden-content">
+                <p>Using Eloquent ORM for database interactions in Laravel.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('blade-templating')">Blade templating engine (in Laravel)</p>
+            <div id="blade-templating" class="hidden-content">
+                <p>Utilizing Blade for templating in Laravel applications.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('middleware')">Middleware and Service Providers</p>
+            <div id="middleware" class="hidden-content">
+                <p>Understanding middleware and service providers in Laravel.</p>
+            </div>
+        </ul>
+
+        <h4>22. Advanced OOP Concepts</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('traits')">Traits</p>
+            <div id="traits" class="hidden-content">
+                <p>Using traits to share methods across classes in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('design-patterns')">Design Patterns (Factory, Singleton, Observer)
+            </p>
+            <div id="design-patterns" class="hidden-content">
+                <p>Exploring common design patterns used in PHP development.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('dependency-injection')">Dependency Injection</p>
+            <div id="dependency-injection" class="hidden-content">
+                <p>Implementing dependency injection for better code management.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('solid-principles')">SOLID Principles</p>
+            <div id="solid-principles" class="hidden-content">
+                <p>Understanding the SOLID principles for object-oriented design.</p>
+            </div>
+        </ul>
+
+        <h4>23. Testing in PHP</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('unit-testing')">Unit testing with PHPUnit</p>
+            <div id="unit-testing" class="hidden-content">
+                <p>Using PHPUnit for unit testing in PHP applications.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('testable-code')">Writing testable code</p>
+            <div id="testable-code" class="hidden-content">
+                <p>Best practices for writing code that is easy to test.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('tdd')">Test-Driven Development (TDD)</p>
+            <div id="tdd" class="hidden-content">
+                <p>Implementing TDD practices in PHP development.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('mocking')">Mocking and testing API endpoints</p>
+            <div id="mocking" class="hidden-content">
+                <p>Techniques for mocking dependencies and testing APIs.</p>
+            </div>
+        </ul>
+
+        <h4>24. PHP and WebSockets</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('websockets')">Real-time communication using WebSockets</p>
+            <div id="websockets" class="hidden-content">
+                <p>How to implement real-time communication with WebSockets in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('websocket-server')">Setting up a WebSocket server in PHP</p>
+            <div id="websocket-server" class="hidden-content">
+                <p>Steps for creating a WebSocket server in PHP.</p>
+            </div>
+        </ul>
+
+        <h4>25. PHP Performance Optimization</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('opcode-caching')">Opcode caching (using tools like OPcache)</p>
+            <div id="opcode-caching" class="hidden-content">
+                <p>Using OPcache to improve PHP performance through opcode caching.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('php-fpm')">PHP-FPM optimization</p>
+            <div id="php-fpm" class="hidden-content">
+                <p>Optimizing PHP performance with PHP-FPM settings.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('memory-usage')">Reducing memory usage</p>
+            <div id="memory-usage" class="hidden-content">
+                <p>Strategies to minimize memory consumption in PHP applications.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('profiling-benchmarking')">Profiling and benchmarking PHP
+                applications</p>
+            <div id="profiling-benchmarking" class="hidden-content">
+                <p>Techniques for profiling and benchmarking PHP code performance.</p>
+            </div>
+        </ul>
+
+        <h4>26. Version Control with Git</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('git-repository')">Setting up a Git repository for a PHP project
+            </p>
+            <div id="git-repository" class="hidden-content">
+                <p>Steps to initialize a Git repository for your PHP projects.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('git-workflows')">Git workflows (feature branching, pull requests)
+            </p>
+            <div id="git-workflows" class="hidden-content">
+                <p>Overview of common Git workflows for collaborative development.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('collaboration')">Collaborating with teams using GitHub or GitLab
+            </p>
+            <div id="collaboration" class="hidden-content">
+                <p>Best practices for collaboration using Git hosting services.</p>
+            </div>
+        </ul>
+
+        <h4>27. Deploying PHP Applications</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('deployment')">Deployment to shared hosting, VPS, or cloud
+                platforms (AWS, Heroku)</p>
+            <div id="deployment" class="hidden-content">
+                <p>How to deploy PHP applications across different environments.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('ci-cd')">Using CI/CD pipelines for automated deployment</p>
+            <div id="ci-cd" class="hidden-content">
+                <p>Implementing CI/CD practices for seamless application deployment.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('dockerizing')">Dockerizing PHP applications</p>
+            <div id="dockerizing" class="hidden-content">
+                <p>Using Docker to containerize PHP applications for deployment.</p>
+            </div>
+        </ul>
+
+        <h4>28. Caching Techniques</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('redis-memcached')">Implementing caching with Redis or Memcached
+            </p>
+            <div id="redis-memcached" class="hidden-content">
+                <p>Utilizing Redis or Memcached for caching data in PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('browser-caching')">Browser-side caching</p>
+            <div id="browser-caching" class="hidden-content">
+                <p>Strategies for implementing browser-side caching in web applications.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('query-caching')">Database query caching</p>
+            <div id="query-caching" class="hidden-content">
+                <p>Techniques for caching database queries to improve performance.</p>
+            </div>
+        </ul>
+
+        <h4>Final Stage: Full Stack PHP Development</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('full-stack')">Building a Full Stack Application</p>
+            <div id="full-stack" class="hidden-content">
+                <p>Steps to build a full stack application using PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('frontend-integration')">Creating a full stack web application with
+                PHP as the backend</p>
+            <div id="frontend-integration" class="hidden-content">
+                <p>Integrating frontend technologies with PHP backend.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('api-consumption')">Frontend integration (HTML, CSS, JavaScript,
+                React/Vue)</p>
+            <div id="api-consumption" class="hidden-content">
+                <p>Working with frontend frameworks and libraries alongside PHP.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('building-apis')">Consuming and building APIs</p>
+            <div id="building-apis" class="hidden-content">
+                <p>Techniques for creating and consuming APIs in PHP applications.</p>
+            </div>
+        </ul>
+
+        <h4>30. Contributing to Open Source</h4>
+        <ul>
+            <p class="toggle" onclick="toggleContent('open-source-projects')">Finding open-source PHP projects</p>
+            <div id="open-source-projects" class="hidden-content">
+                <p>How to find and contribute to open-source PHP projects.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('framework-contributions')">Making contributions to PHP frameworks
+                (like Laravel or Symfony)</p>
+            <div id="framework-contributions" class="hidden-content">
+                <p>Best practices for contributing to popular PHP frameworks.</p>
+            </div>
+
+            <p class="toggle" onclick="toggleContent('php-fig')">Following PHP
+
+                <!-- Contact -->
+            <section class="contact" id="contact">
+                <div class="max-width">
+                    <h2 class="title">Contact Me</h2>
+                    <div class="contact-content">
+                        <div class="column left">
+                            <div class="text">Get in Touch</div>
+                            <p>Feel free to get in touch with me. I am always open to discussing new projects, creative
+                                ideas or
+                                opportunities to be a part of your visions. Email me with any questions or inquiries.
+                                I'll happy
+                                to answer your questions and set up a meeting with you.</p>
+                            <div class="icons">
+
+                                <a href="https://www.instagram.com/ritik.kumar8z?igsh=MXhwZzhpMjBmM2thaA==">
+                                    <div class="row">
+                                        <i class="fa-solid fa-user-large"></i>
+                                        <div class="info">
+                                            <div class="head">Name</div>
+                                            <div class="sub-title"><a
+                                                    href="https://www.instagram.com/ritik.kumar8z?igsh=MXhwZzhpMjBmM2thaA=="
+                                                    style="text-decoration: none; color: #333;">
+                                                    Ritik Kumar</a></div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="row">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div class="info">
+                                        <div class="head"> Address</div>
+                                        <div class="sub-title">Kolkata, India</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <div class="info">
+                                        <div class="head">Email</div>
+                                        <div class="sub-title"><a href="iamritikkumar89@gmail.com"
+                                                style="text-decoration: none; color: #333;">
+                                                iamritikkumar89@gmail.com</a></div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <i class="bi bi-translate"></i>
+                                    <div class="info">
+                                        <div class="head">Language Known</div>
+                                        <div class="sub-title">Hindi, English, Bengali</div>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <!-- Social -->
+                                <div class="social-menu">
+                                    <ul>
+                                        <li><a href="https://github.com/ritikkumar8z"><i
+                                                    class="fa-brands fa-github"></i></a>
+                                        </li>
+                                        <li><a
+                                                href="https://www.linkedin.com/in/ritik-kumar-a40537263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                                    class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.instagram.com/ritik.kumar8z?igsh=MXhwZzhpMjBmM2thaA=="><i
+                                                    class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="https://www.twitter.com/ritikkumar8z"><i
+                                                    class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="https://www.brainwareuniversity.ac.in"
+                                                title="Get Educate with Us"><i
+                                                    class="fa-solid fa-graduation-cap"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reach -->
+                        <div class="column right">
+                            <div class="text">Message me</div>
+                            <form action="#">
+                                <div class="fields">
+                                    <div class="field name">
+                                        <input type="text" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="field email">
+                                        <input type="email" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <input type="text" placeholder="Subject" required>
+                                </div>
+                                <div class="field textarea">
+                                    <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                                </div>
+                                <div class="button-area">
+                                    <button type="submit">Send message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <span>
+                    <a href="https://www.instagram.com/ritik.kumar8z?igsh=MXhwZzhpMjBmM2thaA=="> Ritik Kumar></a> |
+                    <span class="far fa-copyright"></span> 2024 All Rights Reserved. Privacy
+                    Policy
+                </span>
+            </footer>
+            
+            <script src='https://kit.fontawesome.com/3b57a2a2a7.js'></script>
+            <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+            <script src="script.js" defer></script>
+
+    
+
+
+</body>
+
+</html>
